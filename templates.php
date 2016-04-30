@@ -12,7 +12,7 @@
       <h2>Город отправления</h2>
       <div class="input-group">
         <input type="text" class="form-control" id="fldCityOfDeparture">
-        <span id="errorMessageCityOfDeparture" class="help-block"></span>
+        <div id="errorMessageCityOfDeparture" class="help-block"></div>
       </div>
     </div>
   </div>

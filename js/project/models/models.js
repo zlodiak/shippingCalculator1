@@ -6,6 +6,12 @@ APP.CityOfDepartureModel = Backbone.Model.extend({
   }, 
 
   validate: function(attrs) {   console.log('v', attrs.cityName);
-    if($.trim(attrs.cityName).length == 0) { return 'Это поле не может быть пустым' };
+    var errorsArr = [];
+
+    if($.trim(attrs.cityName).length == 0) { errorsArr.push('Это поле не может быть пустым') };
+
+    console.log('errorsArr: ', errorsArr);
+
+    if(errorsArr.length != 0) { return errorsArr };
   }  
 });

@@ -17,9 +17,14 @@ APP.CityOfDepartureView = Backbone.View.extend({
     return this;
   },
 
-  notValidMarkAdd: function(errorMessage) {
+  notValidMarkAdd: function(errorMessagesArr) {
     this.$el.find('#fldCityOfDeparture').removeClass('valid').addClass('not_valid');
-    this.$el.find('#errorMessageCityOfDeparture').html(errorMessage);
+
+    console.log('errors arr in view: ', errorMessagesArr);
+
+    for(key in errorMessagesArr) {
+      this.$el.find('#errorMessageCityOfDeparture').append(errorMessagesArr[key]);
+    };    
   },
 
   validMarkAdd: function() {
