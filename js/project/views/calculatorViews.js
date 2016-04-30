@@ -10,7 +10,7 @@ APP.CalculatorView = Backbone.View.extend({
     this.cityOfDestinationView = new APP.CityOfDestinationView({model: this.cityOfDestinationModel});
 
     this.shippingOptionsView = new APP.ShippingOptionsView();
-    
+
     this.render();
   },    
 
@@ -31,13 +31,12 @@ APP.CalculatorView = Backbone.View.extend({
     'click #calculatorSubmitButton' : 'submit'
   },
 
-  submit: function() {
+  submit: function() {  
     var flagPaymentStart = true,
         cityDeportureName = $('#fldCityOfDeparture').val(), 
         cityDestinationName = $('#fldCityOfDestination').val();
 
     this.cityOfDepartureModel.set({'cityName': cityDeportureName});
-    this.cityOfDestinationModel.set({'cityName': cityDestinationName});
 
     if(this.cityOfDepartureModel.isValid()) {        
       this.cityOfDepartureView.validMarkAdd();
@@ -47,6 +46,8 @@ APP.CalculatorView = Backbone.View.extend({
       this.cityOfDepartureModel.set({'cityName': undefined});
       flagPaymentStart = false;
     };
+
+    this.cityOfDestinationModel.set({'cityName': cityDestinationName});
 
     if(this.cityOfDestinationModel.isValid()) {        
       this.cityOfDestinationView.validMarkAdd();
