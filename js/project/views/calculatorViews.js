@@ -70,8 +70,11 @@ APP.CalculatorView = Backbone.View.extend({
 
     if(this.shippingOptionsModel.isValid()) {        
       console.log('valid');
+      this.shippingOptionsView.validMarkAdd();
     } else {
       var errorMessagesArr = this.shippingOptionsModel.validationError;
+      this.shippingOptionsView.notValidMarkAdd(errorMessagesArr);
+      flagPaymentStart = false;
       console.log('invalid');
     }; 
 
@@ -79,7 +82,7 @@ APP.CalculatorView = Backbone.View.extend({
     console.log('-----------------------', flagPaymentStart);
     console.log('city dep: ', this.cityOfDepartureModel.get('cityName'));
     console.log('city des: ', this.cityOfDestinationModel.get('cityName'));
-    console.log('weight / volume: ', this.cityOfDestinationModel.get('weight'), this.cityOfDestinationModel.get('volume'));
+    console.log('weight / volume: ', this.shippingOptionsModel.get('weight'), this.shippingOptionsModel.get('volume'));
 
     if(flagPaymentStart == true) {
       $('#paymentModal').modal('show');

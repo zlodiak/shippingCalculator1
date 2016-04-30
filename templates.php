@@ -62,11 +62,13 @@
         <div class="row">
           <label>Вес</label>
           <input type="text" class="form-control" id="fldShippingOptionsWeight">
+          <div id="errorMessageShippingOptionsWeight" class="help-block"></div>
         </div>
 
         <div class="row">
           <label>Объём</label>
-          <input type="text" class="form-control" id="fldShippingOptionsVolume">        
+          <input type="text" class="form-control" id="fldShippingOptionsVolume">  
+          <div id="errorMessageShippingOptionsVolume" class="help-block"></div>      
         </div>
       </div>
     </div>
