@@ -7,6 +7,7 @@
 
   <body>
     <div class="container main-container" id="mainContainer">
+      <h1>Калькулятор доставки</h1>
       <div class="content-container" id="contentContainer"></div>
     </div>
 
