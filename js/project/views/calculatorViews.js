@@ -30,11 +30,9 @@ APP.CalculatorView = Backbone.View.extend({
     this.cityOfDepartureModel.set({'cityName': cityName});
 
     if(this.cityOfDepartureModel.isValid()) {        
-      console.log('valid');
       this.cityOfDepartureWidjet.validMarkAdd();
     } else {      
       var errorMessagesArr = this.cityOfDepartureModel.validationError;
-      console.log('invalid: ', errorMessagesArr);
       this.cityOfDepartureWidjet.notValidMarkAdd(errorMessagesArr);
       this.cityOfDepartureModel.set({'cityName': undefined});
     };

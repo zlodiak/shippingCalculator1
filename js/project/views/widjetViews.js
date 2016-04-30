@@ -1,7 +1,7 @@
 APP.CityOfDepartureView = Backbone.View.extend({  
 
   initialize: function() {  
-    console.log(this.model);
+
   },    
 
   tagName: 'div',
@@ -19,8 +19,6 @@ APP.CityOfDepartureView = Backbone.View.extend({
 
   notValidMarkAdd: function(errorMessagesArr) {
     this.$el.find('#fldCityOfDeparture').removeClass('valid').addClass('not_valid');
-
-    console.log('errors arr in view: ', errorMessagesArr);
 
     this.$el.find('#errorMessageCityOfDeparture').html('');
     for(key in errorMessagesArr) {

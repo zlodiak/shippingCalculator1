@@ -1,1 +1,1 @@
-live page: prozaik.16mb.com/works/weekend_projects/graph_kalinin/
+live page: http://prozaik.16mb.com/works/weekend_projects/shipping_Calculator_1/

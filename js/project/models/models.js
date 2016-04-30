@@ -5,7 +5,7 @@ APP.CityOfDepartureModel = Backbone.Model.extend({
     cityName: undefined
   }, 
 
-  validate: function(attrs) {   console.log('v', attrs.cityName);
+  validate: function(attrs) {   
     var errorsArr = [];
 
     if($.trim(attrs.cityName).length == 0) { 
@@ -13,8 +13,6 @@ APP.CityOfDepartureModel = Backbone.Model.extend({
     } else {
         if(isNaN(attrs.cityName) == false) { errorsArr.push('Это поле не может быть цифрой') };    
     };  
-
-    console.log('errorsArr: ', errorsArr);
 
     if(errorsArr.length != 0) { return errorsArr };
   }  
