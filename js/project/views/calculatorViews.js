@@ -124,14 +124,6 @@ APP.PaymentModalView = Backbone.View.extend({
   render: function () {  
     this.$el.html(this.template());
     return this;
-  },
-
-  events:{
-    'click #paymentSubmitButton' : 'pay'
-  },  
-
-  pay: function() {
-    console.log('бдыщ!');
   }
 
 });

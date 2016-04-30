@@ -36,4 +36,11 @@ INFO:
 
 
 
-/****************************************************************************** GLOBAL_blocks:  */
+/****************************************************************************** GLOBAL_blocks: payment_modal */
+.payment_modal .shipping_options .input-group{
+	margin-bottom: 20px;
+}
+
+.payment_modal label:after{
+	content: ': ';
+}

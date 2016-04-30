@@ -4,23 +4,50 @@
 
 <script type="text/template" id="paymentModalTemplate">
   <!-- Modal payment -->
-  <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentLabel">
+  <div class="modal fade payment_modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentLabel">
     <div class="modal-dialog" role="document">     
       <div class="modal-content">
         <form class="" id="paymentForm" method="get" action="#" onSubmit="return false;">
           <fieldset>         
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="paymentLabel">Груз готов к отправке, введите номер пластиковой карты</h4>
+              <h4 class="modal-title" id="paymentLabel">Здесь будет вывод результата для:</h4>
             </div>
 
             <div class="modal-body" id="paymentModalFields">
-              <input class="form-control" id="fldCardNumber" name="fldCardNumber" type="number">                     
+              <form>
+                <fieldset disabled>
+                  <div class="form-group">
+                    <label>Город отправления</label>
+                    <input type="text" class="form-control" placeholder="Disabled input">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Город отправления</label>
+                    <input type="text" class="form-control" placeholder="Disabled input">
+                  </div>
+
+                  <div class="form-group shipping_options">
+                    <label>Параметры груза</label>
+
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Вес</span>
+                      <input type="number" class="form-control" placeholder="Search for...">
+                      <span class="input-group-addon">кг</span>
+                    </div>                                    
+
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Объём</span>
+                      <input type="number" class="form-control" placeholder="Search for...">
+                      <span class="input-group-addon">м<sup>3</sup></span>
+                    </div>  
+                  </div>  
+                </fieldset>
+              </form>                   
             </div>
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-              <button type="submit" class="btn btn-primary submit" value="Submit" id="paymentSubmitButton">Оплатить</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Понятно</button>
             </div>
           </fieldset>
         </form>          
