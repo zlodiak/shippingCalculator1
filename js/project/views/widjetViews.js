@@ -1,7 +1,7 @@
 APP.CityOfDepartureView = Backbone.View.extend({  
 
   initialize: function() {  
-
+    console.log(this.model);
   },    
 
   tagName: 'div',
@@ -15,7 +15,17 @@ APP.CityOfDepartureView = Backbone.View.extend({
   render: function () {  
     this.$el.html(this.template());
     return this;
-  }
+  },
+
+  notValidMarkAdd: function(errorMessage) {
+    this.$el.find('#fldCityOfDeparture').removeClass('valid').addClass('not_valid');
+    this.$el.find('#errorMessageCityOfDeparture').html(errorMessage);
+  },
+
+  validMarkAdd: function() {
+    this.$el.find('#fldCityOfDeparture').removeClass('not_valid').addClass('valid');
+    this.$el.find('#errorMessageCityOfDeparture').html('');
+  }  
 
 });
 

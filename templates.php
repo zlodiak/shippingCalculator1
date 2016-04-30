@@ -1,5 +1,5 @@
-<script type="text/template" id="submitButtonTemplate">
-  <div class="btn btn-default">Рассчитать</div>
+<script type="text/template" id="calculatorSubmitButtonTemplate">
+  <div class="btn btn-default" id="calculatorSubmitButton">Рассчитать</div>
 </script>
 
 <script type="text/template" id="pageError404Template">
@@ -12,6 +12,7 @@
       <h2>Город отправления</h2>
       <div class="input-group">
         <input type="text" class="form-control" id="fldCityOfDeparture">
+        <span id="errorMessageCityOfDeparture" class="help-block"></span>
       </div>
     </div>
   </div>

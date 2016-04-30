@@ -19,70 +19,24 @@ INFO:
 	display: block !important;
 }
 
+.not_valid{
+	border: 1px solid red;
+}
+
+.valid{
+	border: 1px solid #ccc;
+}
+
 /****************************************************************************** GLOBAL_layout */
 .main-container{
 	width: 100%;
 }
 
-	.navbar{
 
-	}
 
-	.content-container{
 
-	}
 
-/****************************************************************************** GLOBAL_blocks: navbar */
-.add_dot_button{
-	display: block !important;
+/****************************************************************************** GLOBAL_blocks:  */
+.notValid{
+
 }
-
-
-
-/****************************************************************************** GLOBAL_blocks: canvas_graph */
-.canvas_graph{
-	background: cyan;
-}
-
-/****************************************************************************** GLOBAL_blocks: graphs */
-.graphs{
-	max-width: 400px;
-	margin: 0 auto;
-}
-
-	.graphs .list-group-item{
-		cursor: pointer;
-		min-height: 40px;
-	}
-
-		.graphs .graph_title{
-			color: #777;
-		}
-
-		.graphs .action{
-			margin-left: 10px;
-			cursor: pointer;
-		}
-
-		.graphs .glyphicon-remove{
-			color: red;
-		}
-
-		.graphs .glyphicon-edit{
-			color: orange;
-		}			
-
-		.graphs .edit_field{
-			height: 20px;
-			overflow: hidden;
-			padding: 0 4px;
-			width: 100%;
-		}			
-
-	.graphs .badge{
-		display: none;
-	}
-
-	.graphs .btn-add{
-		margin-top: 10px;
-	}

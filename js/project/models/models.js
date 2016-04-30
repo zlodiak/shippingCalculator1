@@ -1,14 +1,11 @@
 window.APP = window.APP || {};
 
-APP.Departure = Backbone.Model.extend({
+APP.CityOfDepartureModel = Backbone.Model.extend({
   defaults: {
-    idParent: undefined,
     cityName: undefined
   }, 
 
-  // idAttribute: 'idGraph',
-
-  validate: function(attrs) {
-
+  validate: function(attrs) {   console.log('v', attrs.cityName);
+    if($.trim(attrs.cityName).length == 0) { return 'Это поле не может быть пустым' };
   }  
 });
