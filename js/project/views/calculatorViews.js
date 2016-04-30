@@ -63,29 +63,30 @@ APP.CalculatorView = Backbone.View.extend({
       flagPaymentStart = false;
     };
 
+
     this.shippingOptionsModel.set({
       'weight': shippingOptionsWeight,
       'volume': shippingOptionsVolume
     });
 
     if(this.shippingOptionsModel.isValid()) {        
-      console.log('valid');
       this.shippingOptionsView.validMarkAdd();
     } else {
       var errorMessagesArr = this.shippingOptionsModel.validationError;
       this.shippingOptionsView.notValidMarkAdd(errorMessagesArr);
+      if(errorMessagesArr.weight.length != 0) { this.shippingOptionsModel.set({'weight': undefined}) };
+      if(errorMessagesArr.volume.length != 0) { this.shippingOptionsModel.set({'volume': undefined}) };
       flagPaymentStart = false;
-      console.log('invalid');
     }; 
 
 
-    console.log('-----------------------', flagPaymentStart);
-    console.log('city dep: ', this.cityOfDepartureModel.get('cityName'));
-    console.log('city des: ', this.cityOfDestinationModel.get('cityName'));
-    console.log('weight / volume: ', this.shippingOptionsModel.get('weight'), this.shippingOptionsModel.get('volume'));
-
     if(flagPaymentStart == true) {
       $('#paymentModal').modal('show');
+
+      console.log('---------- result -------------');
+      console.log('city departure: ', this.cityOfDepartureModel.get('cityName'));
+      console.log('city destination: ', this.cityOfDestinationModel.get('cityName'));
+      console.log('weight / volume: ', this.shippingOptionsModel.get('weight'), this.shippingOptionsModel.get('volume'));      
     };
   }
 
@@ -105,6 +106,14 @@ APP.PaymentModalView = Backbone.View.extend({
   render: function () {  
     this.$el.html(this.template());
     return this;
+  },
+
+  events:{
+    'click #paymentSubmitButton' : 'pay'
+  },  
+
+  pay: function() {
+    console.log('бдыщ!');
   }
 
 });
