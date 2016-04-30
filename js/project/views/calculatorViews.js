@@ -9,7 +9,8 @@ APP.CalculatorView = Backbone.View.extend({
     this.cityOfDestinationModel = new APP.CityOfDestinationModel();
     this.cityOfDestinationView = new APP.CityOfDestinationView({model: this.cityOfDestinationModel});
 
-    this.shippingOptionsView = new APP.ShippingOptionsView();
+    this.shippingOptionsModel = new APP.ShippingOptionsModel();
+    this.shippingOptionsView = new APP.ShippingOptionsView({model: this.shippingOptionsModel});
 
     this.render();
   },    
@@ -34,7 +35,10 @@ APP.CalculatorView = Backbone.View.extend({
   submit: function() {  
     var flagPaymentStart = true,
         cityDeportureName = $('#fldCityOfDeparture').val(), 
-        cityDestinationName = $('#fldCityOfDestination').val();
+        cityDestinationName = $('#fldCityOfDestination').val(), 
+        shippingOptionsWeight = $('#fldShippingOptionsWeight').val(),
+        shippingOptionsVolume = $('#fldShippingOptionsVolume').val();
+
 
     this.cityOfDepartureModel.set({'cityName': cityDeportureName});
 
@@ -47,6 +51,7 @@ APP.CalculatorView = Backbone.View.extend({
       flagPaymentStart = false;
     };
 
+
     this.cityOfDestinationModel.set({'cityName': cityDestinationName});
 
     if(this.cityOfDestinationModel.isValid()) {        
@@ -58,9 +63,23 @@ APP.CalculatorView = Backbone.View.extend({
       flagPaymentStart = false;
     };
 
+    this.shippingOptionsModel.set({
+      'weight': shippingOptionsWeight,
+      'volume': shippingOptionsVolume
+    });
+
+    if(this.shippingOptionsModel.isValid()) {        
+      console.log('valid');
+    } else {
+      var errorMessagesArr = this.shippingOptionsModel.validationError;
+      console.log('invalid');
+    }; 
+
+
     console.log('-----------------------', flagPaymentStart);
     console.log('city dep: ', this.cityOfDepartureModel.get('cityName'));
     console.log('city des: ', this.cityOfDestinationModel.get('cityName'));
+    console.log('weight / volume: ', this.cityOfDestinationModel.get('weight'), this.cityOfDestinationModel.get('volume'));
 
     if(flagPaymentStart == true) {
       $('#paymentModal').modal('show');

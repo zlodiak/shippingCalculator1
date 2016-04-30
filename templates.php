@@ -61,12 +61,12 @@
       <div class="input-group col-xs-12">
         <div class="row">
           <label>Вес</label>
-          <input type="text" class="form-control" id="fldWeight">
+          <input type="text" class="form-control" id="fldShippingOptionsWeight">
         </div>
 
         <div class="row">
           <label>Объём</label>
-          <input type="text" class="form-control" id="fldVolume">        
+          <input type="text" class="form-control" id="fldShippingOptionsVolume">        
         </div>
       </div>
     </div>
