@@ -39,8 +39,7 @@ APP.CalculatorView = Backbone.View.extend({
   },
 
   submit: function() {  
-    var flagPaymentStart = true,
-        cityDeportureName = $('#fldCityOfDeparture').val(), 
+    var cityDeportureName = $('#fldCityOfDeparture').val(), 
         cityDestinationName = $('#fldCityOfDestination').val(), 
         shippingOptionsWeight = $('#fldShippingOptionsWeight').val(),
         shippingOptionsVolume = $('#fldShippingOptionsVolume').val();
@@ -48,14 +47,16 @@ APP.CalculatorView = Backbone.View.extend({
 
     this.cityOfDepartureModel.set({'cityName': cityDeportureName});
 
-    if(this.cityOfDepartureModel.isValid()) {        
+    this._changeValidMarks(this.cityOfDepartureModel, this.cityOfDepartureView);
+
+/*    if(this.cityOfDepartureModel.isValid()) {        
       this.cityOfDepartureView.validMarkAdd();
     } else {      
       var errorMessagesArr = this.cityOfDepartureModel.validationError;
       this.cityOfDepartureView.notValidMarkAdd(errorMessagesArr);
       this.cityOfDepartureModel.set({'cityName': undefined});
       flagPaymentStart = false;
-    };
+    };*/
 
 
     this.cityOfDestinationModel.set({'cityName': cityDestinationName});
@@ -93,10 +94,6 @@ APP.CalculatorView = Backbone.View.extend({
       flagPaymentStart = false;
     }; 
 
-
-    if(flagPaymentStart == true) {
-      $('#paymentModal').modal('show');
-
       console.log('---------- result -------------');
 
       console.log(
@@ -108,13 +105,29 @@ APP.CalculatorView = Backbone.View.extend({
         'city destination: ', 
         this.cityOfDestinationModel.get('cityName')
       );
-      
+
       console.log(
         'weight / volume: ', 
         this.shippingOptionsModel.get('weight'), 
         this.shippingOptionsModel.get('volume')
-      );      
-    };
+      );
+
+
+    if( this.cityOfDepartureModel.get('cityName') &&
+        this.cityOfDestinationModel.get('cityName') &&
+        this.shippingOptionsModel.get('weight') &&
+        this.shippingOptionsModel.get('volume')) { $('#paymentModal').modal('show') };
+  },
+
+  _changeValidMarks: function(model, view) {
+    if(model.isValid()) {        
+      view.validMarkAdd();
+    } else {      
+      var errorMessagesArr = model.validationError;
+
+      view.notValidMarkAdd(errorMessagesArr);
+      model.set({'cityName': undefined});
+    };    
   }
 
 });

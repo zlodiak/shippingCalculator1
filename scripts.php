@@ -3,7 +3,6 @@
 <script src="js/underscore-min.js"></script>
 <script src="js/backbone-min.js"></script>
 
-
 <script src="js/project/models/models.js"></script> 
 <script src="js/project/views/calculatorViews.js"></script> 
 <script src="js/project/views/widjetViews.js"></script> 
