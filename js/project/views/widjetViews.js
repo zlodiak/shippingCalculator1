@@ -51,7 +51,21 @@ APP.CityOfDestinationView = Backbone.View.extend({
   render: function () {  
     this.$el.html(this.template());
     return this;
-  }
+  },
+
+  notValidMarkAdd: function(errorMessagesArr) {
+    this.$el.find('#fldCityOfDestination').removeClass('valid').addClass('not_valid');
+
+    this.$el.find('#errorMessageCityOfDestination').html('');
+    for(key in errorMessagesArr) {
+      this.$el.find('#errorMessageCityOfDestination').append(errorMessagesArr[key] + '<br>');
+    };    
+  },
+
+  validMarkAdd: function() {
+    this.$el.find('#fldCityOfDestination').removeClass('not_valid').addClass('valid');
+    this.$el.find('#errorMessageCityOfDestination').html('');
+  }  
 
 });
 
