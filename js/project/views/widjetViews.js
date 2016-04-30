@@ -10,7 +10,7 @@ APP.CityOfDepartureView = Backbone.View.extend({
 
   id: 'cityOfDepartureContainer',
 
-  template: _.template($('#CityOfDepartureTemplate').html()),
+  template: _.template($('#cityOfDepartureTemplate').html()),
 
   render: function () {  
     this.$el.html(this.template());
@@ -32,7 +32,29 @@ APP.CityOfDestinationView = Backbone.View.extend({
 
   id: 'cityOfDestinationContainer',
 
-  template: _.template($('#CityOfDestinationTemplate').html()),
+  template: _.template($('#cityOfDestinationTemplate').html()),
+
+  render: function () {  
+    this.$el.html(this.template());
+    return this;
+  }
+
+});
+
+
+APP.ShippingOptionsView = Backbone.View.extend({  
+
+  initialize: function() {  
+
+  },    
+
+  tagName: 'div',
+
+  className: 'shipping_options_container',
+
+  id: 'shippingOptionsContainer',
+
+  template: _.template($('#shippingOptionsTemplate').html()),
 
   render: function () {  
     this.$el.html(this.template());
