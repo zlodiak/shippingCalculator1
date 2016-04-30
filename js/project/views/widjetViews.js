@@ -112,7 +112,10 @@ APP.ShippingOptionsView = Backbone.View.extend({
   },
 
   validMarkAdd: function() {  console.log('valid mark');
-    this.$el.find('#fldShippingOptionsWeight, #fldShippingOptionsVolume').removeClass('not_valid').addClass('valid');
+    this.$el.find('#fldShippingOptionsWeight, #fldShippingOptionsVolume')
+      .removeClass('not_valid')
+      .addClass('valid');
+      
     this.$el.find('#errorMessageShippingOptionsWeight, #errorMessageShippingOptionsVolume').html('');
   }  
 

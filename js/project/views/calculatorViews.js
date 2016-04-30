@@ -4,13 +4,19 @@ APP.CalculatorView = Backbone.View.extend({
     this.paymentModalView = new APP.PaymentModalView();
 
     this.cityOfDepartureModel = new APP.CityOfDepartureModel();
-    this.cityOfDepartureView = new APP.CityOfDepartureView({model: this.cityOfDepartureModel});
+    this.cityOfDepartureView = new APP.CityOfDepartureView({
+      model: this.cityOfDepartureModel
+    });
 
     this.cityOfDestinationModel = new APP.CityOfDestinationModel();
-    this.cityOfDestinationView = new APP.CityOfDestinationView({model: this.cityOfDestinationModel});
+    this.cityOfDestinationView = new APP.CityOfDestinationView({
+      model: this.cityOfDestinationModel
+    });
 
     this.shippingOptionsModel = new APP.ShippingOptionsModel();
-    this.shippingOptionsView = new APP.ShippingOptionsView({model: this.shippingOptionsModel});
+    this.shippingOptionsView = new APP.ShippingOptionsView({
+      model: this.shippingOptionsModel
+    });
 
     this.render();
   },    
@@ -73,9 +79,17 @@ APP.CalculatorView = Backbone.View.extend({
       this.shippingOptionsView.validMarkAdd();
     } else {
       var errorMessagesArr = this.shippingOptionsModel.validationError;
+
       this.shippingOptionsView.notValidMarkAdd(errorMessagesArr);
-      if(errorMessagesArr.weight.length != 0) { this.shippingOptionsModel.set({'weight': undefined}) };
-      if(errorMessagesArr.volume.length != 0) { this.shippingOptionsModel.set({'volume': undefined}) };
+
+      if(errorMessagesArr.weight.length != 0) { 
+        this.shippingOptionsModel.set({'weight': undefined}); 
+      };
+
+      if(errorMessagesArr.volume.length != 0) { 
+        this.shippingOptionsModel.set({'volume': undefined}); 
+      };
+
       flagPaymentStart = false;
     }; 
 
@@ -84,9 +98,22 @@ APP.CalculatorView = Backbone.View.extend({
       $('#paymentModal').modal('show');
 
       console.log('---------- result -------------');
-      console.log('city departure: ', this.cityOfDepartureModel.get('cityName'));
-      console.log('city destination: ', this.cityOfDestinationModel.get('cityName'));
-      console.log('weight / volume: ', this.shippingOptionsModel.get('weight'), this.shippingOptionsModel.get('volume'));      
+
+      console.log(
+        'city departure: ', 
+        this.cityOfDepartureModel.get('cityName')
+      );
+
+      console.log(
+        'city destination: ', 
+        this.cityOfDestinationModel.get('cityName')
+      );
+      
+      console.log(
+        'weight / volume: ', 
+        this.shippingOptionsModel.get('weight'), 
+        this.shippingOptionsModel.get('volume')
+      );      
     };
   }
 
