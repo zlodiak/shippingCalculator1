@@ -22,8 +22,9 @@ APP.CityOfDepartureView = Backbone.View.extend({
 
     console.log('errors arr in view: ', errorMessagesArr);
 
+    this.$el.find('#errorMessageCityOfDeparture').html('');
     for(key in errorMessagesArr) {
-      this.$el.find('#errorMessageCityOfDeparture').append(errorMessagesArr[key]);
+      this.$el.find('#errorMessageCityOfDeparture').append(errorMessagesArr[key] + '<br>');
     };    
   },
 
