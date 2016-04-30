@@ -58,9 +58,9 @@ APP.CalculatorView = Backbone.View.extend({
       'volume': shippingOptionsVolume
     });
 
-    if(this.shippingOptionsModel.isValid()) {        
-      this.shippingOptionsView.validMarkAdd();
-    } else {
+    this.shippingOptionsView.validMarkAdd();
+
+    if(!this.shippingOptionsModel.isValid()) {
       var errorMessagesArr = this.shippingOptionsModel.validationError;
 
       this.shippingOptionsView.notValidMarkAdd(errorMessagesArr);
@@ -97,7 +97,8 @@ APP.CalculatorView = Backbone.View.extend({
     if( this.cityOfDepartureModel.get('cityName') &&
         this.cityOfDestinationModel.get('cityName') &&
         this.shippingOptionsModel.get('weight') &&
-        this.shippingOptionsModel.get('volume')) { $('#paymentModal').modal('show') };
+        this.shippingOptionsModel.get('volume')
+    ) { $('#paymentModal').modal('show') };
   },
 
   _changeValidMarks: function(model, view) {
