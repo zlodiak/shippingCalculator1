@@ -1,8 +1,4 @@
-APP.CityOfDepartureView = Backbone.View.extend({  
-
-  initialize: function() {  
-
-  },    
+APP.CityOfDepartureView = Backbone.View.extend({   
 
   tagName: 'div',
 
@@ -34,11 +30,7 @@ APP.CityOfDepartureView = Backbone.View.extend({
 });
 
 
-APP.CityOfDestinationView = Backbone.View.extend({  
-
-  initialize: function() {  
-
-  },    
+APP.CityOfDestinationView = Backbone.View.extend({    
 
   tagName: 'div',
 
@@ -70,11 +62,7 @@ APP.CityOfDestinationView = Backbone.View.extend({
 });
 
 
-APP.ShippingOptionsView = Backbone.View.extend({  
-
-  initialize: function() {  
-
-  },    
+APP.ShippingOptionsView = Backbone.View.extend({    
 
   tagName: 'div',
 
@@ -115,7 +103,7 @@ APP.ShippingOptionsView = Backbone.View.extend({
     this.$el.find('#fldShippingOptionsWeight, #fldShippingOptionsVolume')
       .removeClass('not_valid')
       .addClass('valid');
-      
+
     this.$el.find('#errorMessageShippingOptionsWeight, #errorMessageShippingOptionsVolume').html('');
   }  
 

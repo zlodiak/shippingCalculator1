@@ -39,8 +39,8 @@ APP.CalculatorView = Backbone.View.extend({
   },
 
   submit: function() {  
-    var cityDeportureName = $('#fldCityOfDeparture').val(), 
-        cityDestinationName = $('#fldCityOfDestination').val(), 
+    var cityDeportureName =     $('#fldCityOfDeparture').val(), 
+        cityDestinationName =   $('#fldCityOfDestination').val(), 
         shippingOptionsWeight = $('#fldShippingOptionsWeight').val(),
         shippingOptionsVolume = $('#fldShippingOptionsVolume').val();
 
@@ -114,11 +114,7 @@ APP.CalculatorView = Backbone.View.extend({
 });
 
 
-APP.PaymentModalView = Backbone.View.extend({  
-
-  initialize: function() {  
-
-  },    
+APP.PaymentModalView = Backbone.View.extend({     
 
   tagName: 'div',
 
