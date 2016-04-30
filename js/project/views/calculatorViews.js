@@ -46,29 +46,11 @@ APP.CalculatorView = Backbone.View.extend({
 
 
     this.cityOfDepartureModel.set({'cityName': cityDeportureName});
-
     this._changeValidMarks(this.cityOfDepartureModel, this.cityOfDepartureView);
-
-/*    if(this.cityOfDepartureModel.isValid()) {        
-      this.cityOfDepartureView.validMarkAdd();
-    } else {      
-      var errorMessagesArr = this.cityOfDepartureModel.validationError;
-      this.cityOfDepartureView.notValidMarkAdd(errorMessagesArr);
-      this.cityOfDepartureModel.set({'cityName': undefined});
-      flagPaymentStart = false;
-    };*/
 
 
     this.cityOfDestinationModel.set({'cityName': cityDestinationName});
-
-    if(this.cityOfDestinationModel.isValid()) {        
-      this.cityOfDestinationView.validMarkAdd();
-    } else {      
-      var errorMessagesArr = this.cityOfDestinationModel.validationError;
-      this.cityOfDestinationView.notValidMarkAdd(errorMessagesArr);
-      this.cityOfDestinationModel.set({'cityName': undefined});
-      flagPaymentStart = false;
-    };
+    this._changeValidMarks(this.cityOfDestinationModel, this.cityOfDestinationView);
 
 
     this.shippingOptionsModel.set({
@@ -90,9 +72,8 @@ APP.CalculatorView = Backbone.View.extend({
       if(errorMessagesArr.volume.length != 0) { 
         this.shippingOptionsModel.set({'volume': undefined}); 
       };
-
-      flagPaymentStart = false;
     }; 
+
 
       console.log('---------- result -------------');
 
