@@ -2,7 +2,7 @@ APP.CityOfDepartureView = Backbone.View.extend({
 
   tagName: 'div',
 
-  className: 'city_of_departure_container',
+  className: 'city_of_departure_container col-xs-6',
 
   id: 'cityOfDepartureContainer',
 
@@ -34,7 +34,7 @@ APP.CityOfDestinationView = Backbone.View.extend({
 
   tagName: 'div',
 
-  className: 'city_of_destination_container',
+  className: 'city_of_destination_container col-xs-6',
 
   id: 'cityOfDestinationContainer',
 
@@ -66,7 +66,7 @@ APP.ShippingOptionsView = Backbone.View.extend({
 
   tagName: 'div',
 
-  className: 'shipping_options_container',
+  className: 'shipping_options_container col-xs-12',
 
   id: 'shippingOptionsContainer',
 

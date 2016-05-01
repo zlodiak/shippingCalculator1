@@ -7,8 +7,11 @@
 
   <body>
     <div class="container main-container" id="mainContainer">
-      <h1>Калькулятор доставки</h1>
-      <div class="content-container" id="contentContainer"></div>
+      <div class="row">
+        <div class="col-xs-12"><h1>Калькулятор доставки</h1></div>
+      </div>
+      
+      <div class="content-container row" id="contentContainer"></div>
     </div>
 
     <?php require('templates.php'); ?>

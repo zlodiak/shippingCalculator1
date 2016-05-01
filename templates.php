@@ -1,5 +1,5 @@
 <script type="text/template" id="calculatorSubmitButtonTemplate">
-  <div class="btn btn-default" id="calculatorSubmitButton">Рассчитать</div>
+  <div class="col-xs-12"><div class="btn btn-default pull-right" id="calculatorSubmitButton">Рассчитать</div></div>
 </script>
 
 <script type="text/template" id="paymentModalTemplate">
@@ -58,9 +58,9 @@
 
 <script type="text/template" id="cityOfDepartureTemplate">
   <div class="panel panel-default">
-    <div class="panel-body">
-      <h2>Город отправления</h2>
-      <div class="input-group">
+    <div class="panel-body row">
+      <h2 class="col-xs-12">Город отправления</h2>
+      <div class="form-group col-xs-12">
         <input type="text" class="form-control" id="fldCityOfDeparture">
         <div id="errorMessageCityOfDeparture" class="help-block"></div>
       </div>
@@ -70,9 +70,9 @@
 
 <script type="text/template" id="cityOfDestinationTemplate">
   <div class="panel panel-default">
-    <div class="panel-body">
-      <h2>Город назначения</h2>
-      <div class="input-group">
+    <div class="panel-body row">
+      <h2 class="col-xs-12">Город назначения</h2>
+      <div class="form-group col-xs-12">
         <input type="text" class="form-control" id="fldCityOfDestination">
         <div id="errorMessageCityOfDestination" class="help-block"></div>
       </div>
@@ -83,16 +83,16 @@
 
 <script type="text/template" id="shippingOptionsTemplate">
   <div class="panel panel-default">
-    <div class="panel-body">
-      <h2>Параметры груза</h2>
-      <div class="input-group col-xs-12">
-        <div class="row">
+    <div class="panel-body row">
+      <h2 class="col-xs-12">Параметры груза</h2>
+      <div class="form-group col-xs-12">
+        <div class="">
           <label>Вес</label>
           <input type="text" class="form-control" id="fldShippingOptionsWeight">
           <div id="errorMessageShippingOptionsWeight" class="help-block"></div>
         </div>
 
-        <div class="row">
+        <div class="">
           <label>Объём</label>
           <input type="text" class="form-control" id="fldShippingOptionsVolume">  
           <div id="errorMessageShippingOptionsVolume" class="help-block"></div>      

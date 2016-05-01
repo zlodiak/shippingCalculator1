@@ -27,11 +27,19 @@ INFO:
 	border: 1px solid #ccc;
 }
 
-/****************************************************************************** GLOBAL_layout */
-.main-container{
-	width: 100%;
+.form-group {
+    margin-bottom: 0px;
 }
 
+h2{
+	margin-top: 0;
+}
+
+/****************************************************************************** GLOBAL_layout */
+/*.main-container{
+	width: 100%;
+}
+*/
 
 
 
@@ -43,4 +51,8 @@ INFO:
 
 .payment_modal label:after{
 	content: ': ';
+}
+
+.payment_modal .form-group{
+	margin-bottom: 15px;
 }
