@@ -88,13 +88,13 @@
       <div class="form-group col-xs-12">
         <div class="">
           <label>Вес</label>
-          <input type="text" class="form-control" id="fldShippingOptionsWeight">
+          <input type="number" class="form-control" id="fldShippingOptionsWeight">
           <div id="errorMessageShippingOptionsWeight" class="help-block"></div>
         </div>
 
         <div class="">
           <label>Объём</label>
-          <input type="text" class="form-control" id="fldShippingOptionsVolume">  
+          <input type="number" class="form-control" id="fldShippingOptionsVolume">  
           <div id="errorMessageShippingOptionsVolume" class="help-block"></div>      
         </div>
       </div>

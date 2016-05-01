@@ -72,23 +72,23 @@ APP.CalculatorView = Backbone.View.extend({
     }; 
 
 
-      console.log('---------- result -------------');
+/*    console.log('---------- result -------------');
 
-      console.log(
-        'city departure: ', 
-        this.cityOfDepartureModel.get('cityName')
-      );
+    console.log(
+      'city departure: ', 
+      this.cityOfDepartureModel.get('cityName')
+    );
 
-      console.log(
-        'city destination: ', 
-        this.cityOfDestinationModel.get('cityName')
-      );
+    console.log(
+      'city destination: ', 
+      this.cityOfDestinationModel.get('cityName')
+    );
 
-      console.log(
-        'weight / volume: ', 
-        this.shippingOptionsModel.get('weight'), 
-        this.shippingOptionsModel.get('volume')
-      );
+    console.log(
+      'weight / volume: ', 
+      this.shippingOptionsModel.get('weight'), 
+      this.shippingOptionsModel.get('volume')
+    );*/
 
 
     if( this.cityOfDepartureModel.get('cityName') &&
