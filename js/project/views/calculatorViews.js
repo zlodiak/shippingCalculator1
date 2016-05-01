@@ -1,8 +1,6 @@
 APP.CalculatorView = Backbone.View.extend({  
 
   initialize: function() {  
-    this.paymentModalView = new APP.PaymentModalView();
-
     this.cityOfDepartureModel = new APP.CityOfDepartureModel();
     this.cityOfDepartureView = new APP.CityOfDepartureView({
       model: this.cityOfDepartureModel
@@ -28,8 +26,7 @@ APP.CalculatorView = Backbone.View.extend({
   render: function () {  
     this.$el.append(this.cityOfDepartureView.render().el);
     this.$el.append(this.cityOfDestinationView.render().el);
-    this.$el.append(this.shippingOptionsView.render().el);
-    this.$el.append(this.paymentModalView.render().el);
+    this.$el.append(this.shippingOptionsView.render().el);    
     this.$el.append(this.template());
     return this;
   },
@@ -98,7 +95,16 @@ APP.CalculatorView = Backbone.View.extend({
         this.cityOfDestinationModel.get('cityName') &&
         this.shippingOptionsModel.get('weight') &&
         this.shippingOptionsModel.get('volume')
-    ) { $('#paymentModal').modal('show') };
+    ) { 
+      this.paymentModalView = new APP.PaymentModalView();
+      this.$el.append(this.paymentModalView.render({
+        'cityOfDepartureName': this.cityOfDepartureModel.get('cityName'),
+        'cityOfDestinationName': this.cityOfDestinationModel.get('cityName'),
+        'shippingOptionsWeight': this.shippingOptionsModel.get('weight'),
+        'shippingOptionsVolume': this.shippingOptionsModel.get('volume')
+      }).el);
+      $('#paymentModal').modal('show') 
+    };
   },
 
   _changeValidMarks: function(model, view) {
@@ -121,8 +127,8 @@ APP.PaymentModalView = Backbone.View.extend({
 
   template: _.template($('#paymentModalTemplate').html()),
 
-  render: function () {  
-    this.$el.html(this.template());
+  render: function (data) {  console.log(data.cityOfDepartureName);
+    this.$el.html(this.template(data));
     return this;
   }
 

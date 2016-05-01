@@ -11,7 +11,7 @@
           <fieldset>         
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="paymentLabel">Здесь будет вывод результата для:</h4>
+              <h4 class="modal-title" id="paymentLabel">Заказ составлен</h4>
             </div>
 
             <div class="modal-body" id="paymentModalFields">
@@ -19,12 +19,12 @@
                 <fieldset disabled>
                   <div class="form-group">
                     <label>Город отправления</label>
-                    <input type="text" class="form-control" placeholder="Disabled input">
+                    <input type="text" class="form-control" placeholder="<%= cityOfDepartureName %>">
                   </div>
 
                   <div class="form-group">
                     <label>Город отправления</label>
-                    <input type="text" class="form-control" placeholder="Disabled input">
+                    <input type="text" class="form-control" placeholder="<%= cityOfDestinationName %>">
                   </div>
 
                   <div class="form-group shipping_options">
@@ -32,13 +32,13 @@
 
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Вес</span>
-                      <input type="number" class="form-control" placeholder="Search for...">
+                      <input type="number" class="form-control" placeholder="<%= shippingOptionsWeight %>">
                       <span class="input-group-addon">кг</span>
                     </div>                                    
 
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Объём</span>
-                      <input type="number" class="form-control" placeholder="Search for...">
+                      <input type="number" class="form-control" placeholder="<%= shippingOptionsVolume %>">
                       <span class="input-group-addon">м<sup>3</sup></span>
                     </div>  
                   </div>  

@@ -78,8 +78,6 @@ APP.ShippingOptionsModel = Backbone.Model.extend({
         };  
     };    
 
-    console.log('err arr ', errorsArr);
-
     if(errorsArr.weight.length != 0 || errorsArr.volume.length != 0) { 
         return errorsArr; 
     };
