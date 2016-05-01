@@ -79,7 +79,6 @@ APP.ShippingOptionsView = Backbone.View.extend({
 
   notValidMarkAdd: function(errorMessagesArr) {
     if(errorMessagesArr.weight.length != 0) {
-      console.log('weight err');
       this.$el.find('#fldShippingOptionsWeight').removeClass('valid').addClass('not_valid');
 
       this.$el.find('#errorMessageShippingOptionsWeight').html('');
@@ -89,7 +88,6 @@ APP.ShippingOptionsView = Backbone.View.extend({
     }; 
 
     if(errorMessagesArr.volume.length != 0) {
-      console.log('volume err');
       this.$el.find('#fldShippingOptionsVolume').removeClass('valid').addClass('not_valid');
 
       this.$el.find('#errorMessageShippingOptionsVolume').html('');
@@ -99,7 +97,7 @@ APP.ShippingOptionsView = Backbone.View.extend({
     }; 
   },
 
-  validMarkAdd: function() {  console.log('valid mark');
+  validMarkAdd: function() {  
     this.$el.find('#fldShippingOptionsWeight, #fldShippingOptionsVolume')
       .removeClass('not_valid')
       .addClass('valid');

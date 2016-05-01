@@ -127,7 +127,7 @@ APP.PaymentModalView = Backbone.View.extend({
 
   template: _.template($('#paymentModalTemplate').html()),
 
-  render: function (data) {  console.log(data.cityOfDepartureName);
+  render: function (data) {  
     this.$el.html(this.template(data));
     return this;
   }
